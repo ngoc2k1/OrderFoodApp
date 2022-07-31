@@ -12,58 +12,70 @@
         android:layout_height="match_parent"
         android:background="@color/color_background"
         android:padding="@dimen/padding_all_layout"
-        tools:context=".InformationItemActivity">
+        tools:context=".detailActivity">
 
         <ImageButton
-            android:id="@+id/imagebutton_informationitem_likeitem"
-            style="@style/imagebutton_background"
-            android:src="@drawable/ic_like"
+            android:id="@+id/imagebutton_detail_back"
+            android:layout_width="@dimen/width_tiny"
+            android:layout_height="@dimen/height_tiny"
+            android:background="@drawable/rectangle_orange"
+            android:src="@drawable/ic_return"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_detail_like"
+            android:layout_width="@dimen/width_tiny"
+            android:layout_height="@dimen/height_tiny"
+            android:background="@drawable/rectangle_orange"
+            android:src="@drawable/ic_like_detail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <FrameLayout
-            android:id="@+id/framelayout_informationitem_information"
+            android:id="@+id/framelayout_detail_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view_tiny"
             android:background="@color/grey"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imagebutton_informationitem_likeitem">
+            app:layout_constraintTop_toBottomOf="@id/imagebutton_detail_like">
 
             <TextView
-                android:id="@+id/textview_informationitem_pagecurrent"
+                android:id="@+id/textview_detail_pagecurrent"
                 style="@style/format_textview_medium"
                 android:text="2/3" />
 
             <ImageView
-                android:id="@+id/imageview_informationitem_item"
+                android:id="@+id/imageview_detail_food"
                 android:layout_width="@dimen/_180sdp"
                 android:layout_height="@dimen/_180sdp"
                 android:layout_gravity="center"
                 android:src="@drawable/all_imagefood" />
 
             <ImageButton
-                android:id="@+id/imagebutton_informationitem_zoomin"
+                android:id="@+id/imagebutton_detail_zoomin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|bottom"
                 android:src="@drawable/ic_zoom_in" />
 
             <ImageButton
-                android:id="@+id/imagebutton_informationitem_zoomout"
+                android:id="@+id/imagebutton_detail_zoomout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
                 android:src="@drawable/ic_zoomout" />
 
             <ImageButton
-                android:id="@+id/imagebutton_informationitem_left"
+                android:id="@+id/imagebutton_detail_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center"
                 android:src="@drawable/ic_left" />
 
             <ImageButton
-                android:id="@+id/imagebutton_informationitem_right"
+                android:id="@+id/imagebutton_detail_right"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -71,139 +83,140 @@
         </FrameLayout>
 
         <TextView
-            android:id="@+id/textview_informationitem_name"
+            android:id="@+id/textview_detail_name"
             style="@style/format_textview_big"
             android:text="Trà dâu Alley"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/framelayout_informationitem_information" />
+            app:layout_constraintTop_toBottomOf="@id/framelayout_detail_information" />
 
         <TextView
-            android:id="@+id/textview_informationitem_descriptionitem"
+            android:id="@+id/textview_detail_description"
             style="@style/format_textview_small"
             android:text="Ngot ngao"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_name" />
+            app:layout_constraintTop_toBottomOf="@id/textview_detail_name" />
 
         <TextView
-            android:id="@+id/textview_informationitem_rating"
+            android:id="@+id/textview_detail_rating"
             style="@style/detail_textview_white"
             android:backgroundTint="@color/color_background"
             android:text="4.9"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_descriptionitem"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_descriptionitem" />
+            app:layout_constraintEnd_toEndOf="@id/textview_detail_description"
+            app:layout_constraintStart_toStartOf="@id/textview_detail_description"
+            app:layout_constraintTop_toBottomOf="@id/textview_detail_description" />
 
         <ImageButton
-            android:id="@+id/imagebutton_informationitem_rating"
+            android:id="@+id/imagebutton_detail_rating"
             style="@style/imagebutton_background"
-            android:contentDescription="rating"
             android:src="@drawable/ic_rating"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_rating"
-            app:layout_constraintStart_toEndOf="@id/textview_informationitem_rating"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_rating" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_rating"
+            app:layout_constraintStart_toEndOf="@id/textview_detail_rating"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_rating" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_informationitem_vertical"
+            android:id="@+id/guideline_detail_vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.35" />
 
         <TextView
-            android:id="@+id/textview_informationitem_marksize"
+            android:id="@+id/textview_detail_marksize"
             style="@style/detail_view"
             android:text="@string/all_size"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_rating" />
+            app:layout_constraintTop_toBottomOf="@id/textview_detail_rating" />
 
         <TextView
-            android:id="@+id/textview_informationitem_sizeS"
+            android:id="@+id/textview_detail_sizeS"
             style="@style/detail_textview_white"
             android:text="S"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
-            app:layout_constraintStart_toStartOf="@id/guideline_informationitem_vertical"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_marksize"
+            app:layout_constraintStart_toStartOf="@id/guideline_detail_vertical"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_marksize" />
 
         <TextView
-            android:id="@+id/textview_informationitem_sizeM"
+            android:id="@+id/textview_detail_sizeM"
             style="@style/detail_textview_white"
             android:text="M"
             android:textColor="@color/orange_dark"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
-            app:layout_constraintStart_toEndOf="@id/textview_informationitem_sizeS"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_marksize"
+            app:layout_constraintStart_toEndOf="@id/textview_detail_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_marksize" />
 
         <TextView
-            android:id="@+id/textview_informationitem_sizeL"
+            android:id="@+id/textview_detail_sizeL"
             style="@style/detail_textview_white"
             android:text="L"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
-            app:layout_constraintStart_toEndOf="@id/textview_informationitem_sizeM"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_marksize"
+            app:layout_constraintStart_toEndOf="@id/textview_detail_sizeM"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_marksize" />
 
         <TextView
-            android:id="@+id/textview_informationitem_markquantity"
+            android:id="@+id/textview_detail_markquantity"
             style="@style/detail_view"
             android:text="@string/all_quantity"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_marksize"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_marksize" />
+            app:layout_constraintStart_toStartOf="@id/textview_detail_marksize"
+            app:layout_constraintTop_toBottomOf="@id/textview_detail_marksize" />
 
         <ImageButton
-            android:id="@+id/imagebutton_informationitem_decrease"
+            android:id="@+id/imagebutton_detail_minus"
             style="@style/imagebutton_background"
-            android:src="@drawable/ic_subtract"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
-            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeS"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeS"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+            android:src="@drawable/ic_minus_detail"
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_markquantity"
+            app:layout_constraintEnd_toEndOf="@id/textview_detail_sizeS"
+            app:layout_constraintStart_toStartOf="@id/textview_detail_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_markquantity" />
 
         <TextView
-            android:id="@+id/textview_informationitem_quantity"
+            android:id="@+id/textview_detail_quantity"
             style="@style/detail_textview_white"
             android:text="2"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
-            app:layout_constraintStart_toEndOf="@id/imagebutton_informationitem_decrease"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_markquantity"
+            app:layout_constraintStart_toEndOf="@id/imagebutton_detail_minus"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_markquantity" />
 
         <ImageButton
-            android:id="@+id/imagebutton_informationitem_increase"
+            android:id="@+id/imagebutton_detail_plus"
             style="@style/imagebutton_background"
             android:src="@drawable/ic_plus_detail"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
-            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeL"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeL"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_markquantity"
+            app:layout_constraintEnd_toEndOf="@id/textview_detail_sizeL"
+            app:layout_constraintStart_toStartOf="@id/textview_detail_sizeL"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_markquantity" />
 
         <TextView
-            android:id="@+id/textview_informationitem_markprice"
+            android:id="@+id/textview_detail_markprice"
             style="@style/detail_view"
             android:text="@string/all_priceunit"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_marksize"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_markquantity" />
+            app:layout_constraintStart_toStartOf="@id/textview_detail_marksize"
+            app:layout_constraintTop_toBottomOf="@id/textview_detail_markquantity" />
 
 
         <TextView
-            android:id="@+id/textview_informationitem_price"
+            android:id="@+id/textview_detail_price"
             style="@style/detail_textview_white"
             android:layout_width="0dp"
             android:text="200.000"
-            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markprice"
-            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeL"
-            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeS"
-            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markprice" />
+            app:layout_constraintBottom_toBottomOf="@id/textview_detail_markprice"
+            app:layout_constraintEnd_toEndOf="@id/textview_detail_sizeL"
+            app:layout_constraintStart_toStartOf="@id/textview_detail_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_detail_markprice" />
 
         <Button
-            android:id="@+id/button_informationitem_markaddtocart"
+            android:id="@+id/button_detail_markaddtocart"
             style="@style/detail_view"
-            android:drawableEnd="@drawable/ic_cart"
+            android:layout_marginBottom="@dimen/margin_view_tiny"
             android:background="@drawable/rectangle_orange"
-            android:text="@string/informationitem_addtocart"
+            android:drawableEnd="@drawable/ic_cart"
+            android:text="@string/detail_addtocart"
             android:textAllCaps="false"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_markprice" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

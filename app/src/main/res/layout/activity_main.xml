@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/color_background"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:padding="@dimen/padding_all_layout"
         tools:context=".MainActivity">
 
@@ -165,11 +167,11 @@
                     app:layout_constraintTop_toBottomOf="@id/textview_main_newest">
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:paddingBottom="@dimen/_24sdp"
                         android:id="@+id/recyclerview_main_listnewest"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_100sdp"
                         android:orientation="horizontal"
+                        android:paddingBottom="@dimen/_24sdp"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                 </ScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -234,7 +236,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:src="@drawable/ic_like" />
+                            android:src="@drawable/ic_like_appbar" />
 
                         <TextView
                             android:id="@+id/textView1111"
@@ -293,8 +295,8 @@
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/green_light"
-                android:elevation="8dp"
+                android:backgroundTint="@color/violet"
+                android:elevation="20dp"
                 android:src="@drawable/ic_cart"
                 app:layout_anchor="@id/app_bar" />
 

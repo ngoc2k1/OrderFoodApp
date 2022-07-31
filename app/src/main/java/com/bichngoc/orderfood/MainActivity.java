@@ -1,14 +1,16 @@
 package com.bichngoc.orderfood;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bichngoc.orderfood.adapters.CategoryAdapter;
 import com.bichngoc.orderfood.adapters.PopularAdapter;
 import com.bichngoc.orderfood.databinding.ActivityMainBinding;
+import com.bichngoc.orderfood.interfaces.IRecyclerViewListener;
 import com.bichngoc.orderfood.models.Category;
 import com.bichngoc.orderfood.models.Food;
 
@@ -33,6 +35,29 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         recyclerViewCategory();
         recyclerViewPopular();
+        recyclerViewNewest();
+        mPopularAdapter.setCallback(new IRecyclerViewListener() {
+            @Override
+            public void onClickListener(View view, int position) {
+                Food clickedFood = mPopularList.get(position);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("clickedFood", clickedFood);
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void recyclerViewNewest() {
+        mPopularList = new ArrayList<>();
+        mPopularList.add(new Food("Pizza1", "cat_1", "beef,cheese,sauce,lettuce,tomato", 20.0));
+        mPopularList.add(new Food("Pizza2", "image_food_02", "beef,cheese,sauce,lettuce,tomato", 20.8));
+        mPopularList.add(new Food("Pizza3", "image_food_03", "beef,cheese,sauce,lettuce,tomato", 20.5));
+        mPopularList.add(new Food("Pizza4", "image_food_01", "beef,cheese,sauce,lettuce,tomato", 20.5));
+        mPopularList.add(new Food("Pizza5", "cat_3", "beef,cheese,sauce,lettuce,tomato", 20.5));
+        mPopularAdapter = new PopularAdapter(mPopularList);
+        binding.recyclerviewMainListnewest.setAdapter(mPopularAdapter);
     }
 
     private void recyclerViewPopular() {
@@ -44,8 +69,6 @@ public class MainActivity extends AppCompatActivity {
         mPopularList.add(new Food("Pizza5", "cat_3", "beef,cheese,sauce,lettuce,tomato", 20.5));
         mPopularAdapter = new PopularAdapter(mPopularList);
         binding.recyclerviewHomeListpopular.setAdapter(mPopularAdapter);
-        mPopularAdapter = new PopularAdapter(mPopularList);
-        binding.recyclerviewMainListnewest.setAdapter(mPopularAdapter);
     }
 
     private void recyclerViewCategory() {

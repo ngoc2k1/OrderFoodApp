@@ -41,7 +41,7 @@
     <string name="payment_checkout">checkout</string>
     <string name="news_rule">-Cac chinh sach, qui dinh</string>
     <string name="news_thanks">-Cam on qui khach da tin tuong</string>
-    <string name="informationitem_addtocart">Add to cart</string>
+    <string name="detail_addtocart">Add to cart</string>
     <string name="splash_getstarted">Get started</string>
     <string name="account_editinformation">Edit information</string>
     <string name="home_voice">voice</string>

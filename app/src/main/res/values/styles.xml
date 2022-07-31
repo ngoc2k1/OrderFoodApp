@@ -52,8 +52,8 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="detail_view" parent="format_textview_big">
-        <item name="android:layout_marginTop">@dimen/margin_view_medium</item>
+    <style name="detail_view" parent="format_textview_medium">
+        <item name="android:layout_marginTop">@dimen/margin_view_small</item>
     </style>
 
     <style name="account_textview_edittext_button" parent="format_textview_medium">

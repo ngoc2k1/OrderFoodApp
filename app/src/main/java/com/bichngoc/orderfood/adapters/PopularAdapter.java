@@ -8,22 +8,25 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
-import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bichngoc.orderfood.R;
-import com.bichngoc.orderfood.databinding.ViewholderPopularBinding;
+import com.bichngoc.orderfood.interfaces.IRecyclerViewListener;
 import com.bichngoc.orderfood.models.Food;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHolder> {
-    ArrayList<Food> mPopularList = new ArrayList<>();
+    private ArrayList<Food> mPopularList;
+    private IRecyclerViewListener callback;
 
     public PopularAdapter(ArrayList<Food> mPopularList) {
         this.mPopularList = mPopularList;
+    }
+
+    public void setCallback(IRecyclerViewListener callback) {
+        this.callback = callback;
     }
 
     @NonNull
@@ -62,6 +65,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             price = itemView.findViewById(R.id.textview_viewholderpopular_price);
             addToCart = itemView.findViewById(R.id.textview_viewholderpopular_addtocart);
             linearLayout = itemView.findViewById(R.id.viewholder_popular);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(callback!=null){
+                        callback.onClickListener(view,getAdapterPosition());
+                    }
+                }
+            });
         }
     }
 }
