@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_all_layout">8dp</dimen>
+    <dimen name="padding_all_view">8dp</dimen>
+
+    <dimen name="size_text_viewholdercategory_textview">@dimen/_8sdp</dimen>
+    <dimen name="margin_viewholdercategory_textview_top">@dimen/_4sdp</dimen>
+
+    <dimen name="size_text_tiny">@dimen/_8sdp</dimen>
+    <dimen name="size_text_small">@dimen/_12sdp</dimen>
+    <dimen name="size_text_medium">@dimen/_16sdp</dimen>
+    <dimen name="size_text_big">@dimen/_20sdp</dimen>
+    <dimen name="size_text_huge">@dimen/_30sdp</dimen>
+
+    <dimen name="margin_view_tiny">@dimen/_4sdp</dimen>
+    <dimen name="margin_view_small">@dimen/_12sdp</dimen>
+    <dimen name="margin_view_medium">@dimen/_16sdp</dimen>
+    <dimen name="margin_view_big">@dimen/_20sdp</dimen>
+    <dimen name="margin_view_huge">@dimen/_30sdp</dimen>
+
+    <dimen name="width_big">@dimen/_300sdp</dimen>
+    <dimen name="height_big">@dimen/_300sdp</dimen>
+    <dimen name="width_medium">@dimen/_180sdp</dimen>
+    <dimen name="height_medium">@dimen/_100sdp</dimen>
+    <dimen name="width_small">@dimen/_60sdp</dimen>
+    <dimen name="height_small">@dimen/_60sdp</dimen>
+    <dimen name="width_tiny">@dimen/_30sdp</dimen>
+    <dimen name="height_tiny">@dimen/_30sdp</dimen>
+</resources>

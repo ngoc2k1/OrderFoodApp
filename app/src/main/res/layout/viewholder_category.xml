@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/viewholder_category"
+        android:layout_width="@dimen/width_small"
+        android:background="@color/purple_200"
+        android:layout_height="@dimen/height_small"
+        android:layout_margin="@dimen/margin_view_tiny"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textview_viewholdercategory_name"
+            style="@style/format_textview_small"
+            android:layout_gravity="center"
+            android:text="Pizza" />
+        <ImageView
+            android:id="@+id/imageview_viewholdercategory_picture"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:layout_gravity="center"
+            android:contentDescription="image of category"
+            android:src="@drawable/cat_1" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Order Food</string>
+    <string name="login_createaccount">CREATE ACCOUNT ?</string>
+    <string name="login_login">LOGIN</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+
+    <string name="register_createaccount">CREATE ACCOUNT</string>
+    <string name="register_username">Username</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirmpassword">Confirm password</string>
+
+    <string name="splash_welcomestore">Welcome to healthy nutritious store</string>
+    <string name="all_addresstore">Address store</string>
+    <string name="all_telstore">Tel store</string>
+    <string name="all_fullname">Full name</string>
+    <string name="all_email">Email</string>
+    <string name="all_address">Address</string>
+    <string name="all_tel">Tel</string>
+    <string name="all_home">Home</string>
+    <string name="all_categories">Categories</string>
+    <string name="all_category">Category</string>
+    <string name="all_like">Like</string>
+    <string name="all_myorder">My order</string>
+    <string name="all_mycart">My cart</string>
+    <string name="all_news">News of store</string>
+    <string name="all_account">My account</string>
+    <string name="all_deliverytime">Delivery time: 5 days</string>
+    <string name="all_totalprice">Total</string>
+    <string name="all_price">Price</string>
+    <string name="all_name">Name</string>
+    <string name="all_priceunit">Price unit</string>
+    <string name="all_quantity">Quantity</string>
+    <string name="all_size">Size</string>
+
+    <string name="home_hello">Hello Ngoc, \nWhat \'s today\'s taste?</string>
+    <string name="home_popular">Popular</string>
+    <string name="home_newest">Newest</string>
+    <string name="home_searchhere">Search here</string>
+
+    <string name="payment_checkout">checkout</string>
+    <string name="news_rule">-Cac chinh sach, qui dinh</string>
+    <string name="news_thanks">-Cam on qui khach da tin tuong</string>
+    <string name="informationitem_addtocart">Add to cart</string>
+    <string name="splash_getstarted">Get started</string>
+    <string name="account_editinformation">Edit information</string>
+    <string name="home_voice">voice</string>
+    <string name="home_menu">menu</string>
+    <string name="home_hihi">hihi</string>
+    <string name="home_search">search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_home_fragment">Hello home fragment</string>
+    <string name="hello_news_fragment">Hello news fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

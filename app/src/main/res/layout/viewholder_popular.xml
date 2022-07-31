@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/viewholder_popular"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_125sdp"
+        android:layout_margin="@dimen/margin_view_tiny"
+        android:background="@drawable/holder_cate_click"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview_viewholderpopular_name"
+            style="@style/format_textview_small"
+            android:text="Rice" />
+
+        <ImageView
+            android:id="@+id/imageview_viewholderpopular_picture"
+            android:layout_width="@dimen/_70sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/image_food_01" />
+
+        <TextView
+            android:id="@+id/textview_viewholderpopular_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:fontFamily="@font/ptsans_bold"
+            android:gravity="center"
+            android:text="500000"
+            android:textColor="@color/black"
+            android:textSize="@dimen/size_text_small" />
+
+        <TextView
+            android:id="@+id/textview_viewholderpopular_addtocart"
+            style="@style/format_text"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:background="@drawable/rectangle_orange"
+            android:drawableStart="@drawable/ic_plus_holder_popular_newest"
+            android:gravity="center"
+            android:padding="@dimen/margin_view_tiny"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_text_tiny" />
+    </LinearLayout>
+</layout>

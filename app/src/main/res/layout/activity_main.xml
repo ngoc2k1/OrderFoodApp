@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:padding="@dimen/padding_all_layout"
+        tools:context=".MainActivity">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:paddingBottom="@dimen/_48sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/imagebutton_main_account"
+                    android:layout_width="@dimen/width_small"
+                    android:layout_height="@dimen/height_small"
+                    android:contentDescription="@string/all_account"
+                    android:src="@drawable/ic_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textview_main_question"
+                    style="@style/format_textview_medium"
+                    android:text="@string/home_hello"
+                    app:layout_constraintBottom_toBottomOf="@id/imagebutton_main_account"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/imagebutton_main_account" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/autocompletetextview_home_search"
+                    style="@style/format_textview_small"
+                    android:layout_width="0dp"
+                    android:layout_marginTop="@dimen/margin_view_big"
+                    android:background="@color/grey"
+                    android:drawableStart="@drawable/ic_main_find"
+                    android:drawableEnd="@drawable/ic_main_voice"
+                    android:hint="@string/home_searchhere"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textPersonName"
+                    android:padding="@dimen/padding_all_view"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_question" />
+
+                <FrameLayout
+                    android:id="@+id/framelayout_main_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_medium"
+                    android:layout_marginTop="@dimen/margin_view_big"
+                    android:background="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/autocompletetextview_home_search">
+
+                    <ImageView
+                        android:id="@+id/imageview_main_description"
+                        android:layout_width="@dimen/width_medium"
+                        android:layout_height="@dimen/height_medium"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/image_main_description" />
+
+                    <TextView
+                        style="@style/format_textview_small"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="@dimen/margin_view_small"
+                        android:layout_marginEnd="@dimen/margin_view_big"
+                        android:text="Free Ship"
+                        android:textColor="@color/orange_dark" />
+
+                    <TextView
+                        style="@style/format_textview_small"
+                        android:layout_gravity="center|end"
+                        android:layout_marginBottom="@dimen/margin_view_tiny"
+                        android:text="August 1st - 31th"
+                        android:textColor="@color/orange_dark" />
+
+                    <Button
+                        style="@style/format_textview_small"
+                        android:layout_height="@dimen/height_tiny"
+                        android:layout_gravity="end|bottom"
+                        android:layout_marginBottom="@dimen/margin_view_tiny"
+                        android:background="@drawable/rectangle_orange"
+                        android:text="Order now"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white" />
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/textview_main_category"
+                    style="@style/format_textview_medium"
+                    android:layout_marginTop="@dimen/margin_view_small"
+                    android:text="@string/all_categories"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/framelayout_main_description" />
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_category">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_main_listcategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                </ScrollView>
+
+                <TextView
+                    android:id="@+id/textview_main_popular"
+                    style="@style/format_textview_medium"
+                    android:layout_marginTop="@dimen/_80sdp"
+                    android:text="@string/home_popular"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_category" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="@id/textview_main_popular"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_popular">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_home_listpopular"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_80sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </ScrollView>
+
+                <TextView
+                    android:id="@+id/textview_main_newest"
+                    style="@style/format_textview_medium"
+                    android:layout_marginTop="@dimen/_140sdp"
+                    android:text="@string/home_newest"
+                    app:layout_constraintStart_toStartOf="@id/textview_main_popular"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_popular" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toStartOf="@id/textview_main_newest"
+                    app:layout_constraintTop_toBottomOf="@id/textview_main_newest">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:paddingBottom="@dimen/_24sdp"
+                        android:id="@+id/recyclerview_main_listnewest"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/app_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="@dimen/_4sdp"
+                app:fabCradleRoundedCornerRadius="@dimen/_16sdp"
+                app:fabCradleVerticalOffset="@dimen/_10sdp"
+                tools:ignore="BottomAppBar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:id="@+id/home_button"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_home" />
+
+                        <TextView
+                            android:id="@+id/textView111111"
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Home" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/home_button1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imv11"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_like" />
+
+                        <TextView
+                            android:id="@+id/textView1111"
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Like" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/home_button11"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imv111"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_note" />
+
+                        <TextView
+                            android:id="@+id/textView111"
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="News" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/home_button111"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageview_main_account_appbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_account" />
+
+                        <TextView
+                            android:id="@+id/textView1111111111111"
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Account" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green_light"
+                android:elevation="8dp"
+                android:src="@drawable/ic_cart"
+                app:layout_anchor="@id/app_bar" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

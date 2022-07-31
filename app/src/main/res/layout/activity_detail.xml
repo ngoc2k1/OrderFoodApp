@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:padding="@dimen/padding_all_layout"
+        tools:context=".InformationItemActivity">
+
+        <ImageButton
+            android:id="@+id/imagebutton_informationitem_likeitem"
+            style="@style/imagebutton_background"
+            android:src="@drawable/ic_like"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/framelayout_informationitem_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imagebutton_informationitem_likeitem">
+
+            <TextView
+                android:id="@+id/textview_informationitem_pagecurrent"
+                style="@style/format_textview_medium"
+                android:text="2/3" />
+
+            <ImageView
+                android:id="@+id/imageview_informationitem_item"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/all_imagefood" />
+
+            <ImageButton
+                android:id="@+id/imagebutton_informationitem_zoomin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|bottom"
+                android:src="@drawable/ic_zoom_in" />
+
+            <ImageButton
+                android:id="@+id/imagebutton_informationitem_zoomout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:src="@drawable/ic_zoomout" />
+
+            <ImageButton
+                android:id="@+id/imagebutton_informationitem_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:src="@drawable/ic_left" />
+
+            <ImageButton
+                android:id="@+id/imagebutton_informationitem_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:src="@drawable/ic_right" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textview_informationitem_name"
+            style="@style/format_textview_big"
+            android:text="Trà dâu Alley"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/framelayout_informationitem_information" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_descriptionitem"
+            style="@style/format_textview_small"
+            android:text="Ngot ngao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_name" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_rating"
+            style="@style/detail_textview_white"
+            android:backgroundTint="@color/color_background"
+            android:text="4.9"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_descriptionitem"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_descriptionitem" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_informationitem_rating"
+            style="@style/imagebutton_background"
+            android:contentDescription="rating"
+            android:src="@drawable/ic_rating"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_rating"
+            app:layout_constraintStart_toEndOf="@id/textview_informationitem_rating"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_rating" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_informationitem_vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_marksize"
+            style="@style/detail_view"
+            android:text="@string/all_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_rating" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_sizeS"
+            style="@style/detail_textview_white"
+            android:text="S"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
+            app:layout_constraintStart_toStartOf="@id/guideline_informationitem_vertical"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_sizeM"
+            style="@style/detail_textview_white"
+            android:text="M"
+            android:textColor="@color/orange_dark"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
+            app:layout_constraintStart_toEndOf="@id/textview_informationitem_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_sizeL"
+            style="@style/detail_textview_white"
+            android:text="L"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_marksize"
+            app:layout_constraintStart_toEndOf="@id/textview_informationitem_sizeM"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_marksize" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_markquantity"
+            style="@style/detail_view"
+            android:text="@string/all_quantity"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_marksize"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_marksize" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_informationitem_decrease"
+            style="@style/imagebutton_background"
+            android:src="@drawable/ic_subtract"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
+            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeS"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_quantity"
+            style="@style/detail_textview_white"
+            android:text="2"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
+            app:layout_constraintStart_toEndOf="@id/imagebutton_informationitem_decrease"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_informationitem_increase"
+            style="@style/imagebutton_background"
+            android:src="@drawable/ic_plus_detail"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markquantity"
+            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeL"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeL"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markquantity" />
+
+        <TextView
+            android:id="@+id/textview_informationitem_markprice"
+            style="@style/detail_view"
+            android:text="@string/all_priceunit"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_marksize"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_markquantity" />
+
+
+        <TextView
+            android:id="@+id/textview_informationitem_price"
+            style="@style/detail_textview_white"
+            android:layout_width="0dp"
+            android:text="200.000"
+            app:layout_constraintBottom_toBottomOf="@id/textview_informationitem_markprice"
+            app:layout_constraintEnd_toEndOf="@id/textview_informationitem_sizeL"
+            app:layout_constraintStart_toStartOf="@id/textview_informationitem_sizeS"
+            app:layout_constraintTop_toTopOf="@id/textview_informationitem_markprice" />
+
+        <Button
+            android:id="@+id/button_informationitem_markaddtocart"
+            style="@style/detail_view"
+            android:drawableEnd="@drawable/ic_cart"
+            android:background="@drawable/rectangle_orange"
+            android:text="@string/informationitem_addtocart"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_informationitem_markprice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

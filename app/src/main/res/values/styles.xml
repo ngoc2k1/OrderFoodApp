@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="format_text">
+        <item name="android:fontFamily">@font/tirodevanagarisanskrit_regular</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="format_textview_tiny" parent="format_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text_tiny</item>
+    </style>
+
+    <style name="format_textview_small" parent="format_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text_small</item>
+    </style>
+    <style name="format_textview_medium" parent="format_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text_medium</item>
+    </style>
+
+    <style name="format_textview_big" parent="format_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text_big</item>
+    </style>
+
+    <style name="format_textview_huge" parent="format_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/size_text_huge</item>
+    </style>
+
+    <style name="menu_imagebutton" parent="imagebutton_background">
+        <item name="android:layout_marginStart">@dimen/margin_view_medium</item>
+    </style>
+
+    <style name="imagebutton_background">
+        <item name="android:backgroundTint">@color/color_background</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="detail_textview_white" parent="format_textview_medium">
+        <item name="android:layout_width">@dimen/width_tiny</item>
+        <item name="android:layout_marginStart">@dimen/margin_view_small</item>
+        <item name="android:background">@drawable/ic_background_size</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="detail_view" parent="format_textview_big">
+        <item name="android:layout_marginTop">@dimen/margin_view_medium</item>
+    </style>
+
+    <style name="account_textview_edittext_button" parent="format_textview_medium">
+        <item name="android:layout_marginTop">@dimen/margin_view_small</item>
+    </style>
+
+    <style name="main_textview_bottomappbar" parent="format_text">
+        <item name="android:textSize">@dimen/size_text_tiny</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>
