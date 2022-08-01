@@ -13,10 +13,10 @@ import com.bichngoc.orderfood.models.PhotoSplash;
 
 import java.util.ArrayList;
 
-public class PhotoSplashAdapter extends RecyclerView.Adapter<PhotoSplashAdapter.ViewHolder> {
+public class PhotoViewPagerAdapter extends RecyclerView.Adapter<PhotoViewPagerAdapter.ViewHolder> {
     private ArrayList<PhotoSplash> list;
 
-    public PhotoSplashAdapter(ArrayList<PhotoSplash> list) {
+    public PhotoViewPagerAdapter(ArrayList<PhotoSplash> list) {
         this.list = list;
     }
 

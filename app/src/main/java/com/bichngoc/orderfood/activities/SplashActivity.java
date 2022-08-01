@@ -8,8 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.bichngoc.orderfood.R;
-import com.bichngoc.orderfood.adapters.PhotoSplashAdapter;
+import com.bichngoc.orderfood.adapters.PhotoViewPagerAdapter;
 import com.bichngoc.orderfood.databinding.ActivitySplashBinding;
+import com.bichngoc.orderfood.helper.DepthPageTransformer;
 import com.bichngoc.orderfood.models.PhotoSplash;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private ActivitySplashBinding binding;
     private ArrayList<PhotoSplash> listPhotoFood;
-    private PhotoSplashAdapter imageSplashAdapter;
+    private PhotoViewPagerAdapter imageSplashAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,12 @@ public class SplashActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash);
 
         initData();
-        imageSplashAdapter = new PhotoSplashAdapter(listPhotoFood);
+        imageSplashAdapter = new PhotoViewPagerAdapter(listPhotoFood);
         binding.viewpager2Splash.setAdapter(imageSplashAdapter);
+        binding.viewpager2Splash.setPageTransformer(new DepthPageTransformer());
+//        imageSplashAdapter.notifyDataSetChanged();
         binding.circleIndicator3Splash.setViewPager(binding.viewpager2Splash);
+        binding.viewpager2Splash.setCurrentItem(2);
         binding.buttonSplashGetstarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
