@@ -1,5 +1,6 @@
 package com.bichngoc.orderfood.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bichngoc.orderfood.R;
+import com.bichngoc.orderfood.activities.DetailActivity;
 import com.bichngoc.orderfood.interfaces.IRecyclerViewListener;
 import com.bichngoc.orderfood.models.Food;
 import com.bumptech.glide.Glide;
@@ -44,6 +46,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(currentFood.getPicture(), "drawable", holder.itemView.getContext().getPackageName());
         Glide.with(holder.itemView.getContext()).load(drawableResourceId).into(holder.picture);
+        holder.addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("clickedFood", mPopularList.get(holder.getAdapterPosition()));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -68,8 +78,8 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(callback!=null){
-                        callback.onClickListener(view,getAdapterPosition());
+                    if (callback != null) {
+                        callback.onClickListener(view, getAdapterPosition());
                     }
                 }
             });

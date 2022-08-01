@@ -1,4 +1,4 @@
-package com.bichngoc.orderfood;
+package com.bichngoc.orderfood.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.bichngoc.orderfood.R;
 import com.bichngoc.orderfood.databinding.ActivitySplashBinding;
 
 

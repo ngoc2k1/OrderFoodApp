@@ -1,4 +1,4 @@
-package com.bichngoc.orderfood;
+package com.bichngoc.orderfood.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.bichngoc.orderfood.R;
 import com.bichngoc.orderfood.databinding.ActivityDetailBinding;
 import com.bichngoc.orderfood.helper.ManagementCart;
 import com.bichngoc.orderfood.models.Food;
@@ -23,13 +24,16 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
+        managementCart= new ManagementCart(this);
         getBundle();
     }
 
     private void getBundle() {
         clickedFood = (Food) getIntent().getSerializableExtra("clickedFood");
         int drawableResourceId = this.getResources().getIdentifier(clickedFood.getPicture(), "drawable", this.getPackageName());
-        Glide.with(this).load(drawableResourceId).into(binding.imageviewDetailFood);
+        Glide.with(this)
+                .load(drawableResourceId)
+                .into(binding.imageviewDetailFood);
         binding.textviewDetailName.setText(clickedFood.getName() + "");
         binding.textviewDetailPrice.setText(clickedFood.getPrice() + "");
         binding.textviewDetailDescription.setText(clickedFood.getDescription() + "");
@@ -42,7 +46,14 @@ public class DetailActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "+1", Toast.LENGTH_SHORT).show();
             }
         });
-
+        binding.buttonDetailAddtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedFood.setNumberInCart(quantityOrder);
+                managementCart.insertFood(clickedFood);
+                Toast.makeText(getApplicationContext(), "Added to your cart", Toast.LENGTH_SHORT).show();
+            }
+        });
         binding.imagebuttonDetailMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

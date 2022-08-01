@@ -206,7 +206,7 @@
             app:layout_constraintTop_toTopOf="@id/textview_detail_markprice" />
 
         <Button
-            android:id="@+id/button_detail_markaddtocart"
+            android:id="@+id/button_detail_addtocart"
             style="@style/detail_view"
             android:layout_marginBottom="@dimen/margin_view_tiny"
             android:background="@drawable/rectangle_orange"

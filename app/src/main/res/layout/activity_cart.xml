@@ -1,9 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CartActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_background"
+        android:padding="@dimen/padding_all_layout"
+        tools:context=".activities.CartActivity">
+
+        <TextView
+            android:id="@+id/textview_cart_mycart"
+            style="@style/format_textview_big"
+            android:text="@string/all_mycart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textview_cart_empty"
+            style="@style/format_textview_small"
+            android:text="My cart is empty!"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_mycart" />
+
+        <ScrollView
+            android:id="@+id/scrollview_cart_orderditems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/guideline_cart_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/textview_cart_mycart"
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_empty">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_cart_listitem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_cart_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.68" />
+
+        <TextView
+            android:id="@+id/textview_cart_deliveryservices"
+            style="@style/format_textview_small"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:text="Delivery services"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline_cart_horizontal" />
+
+        <TextView
+            android:id="@+id/textview_cart_tax"
+            style="@style/format_textview_small"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:text="Tax"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_deliveryservices" />
+
+        <TextView
+            android:id="@+id/textview_cart_totalitem"
+            style="@style/format_textview_small"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:text="@string/cart_totalitem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_tax" />
+
+        <TextView
+            android:id="@+id/textview_cart_totalprice"
+            style="@style/format_textview_medium"
+            android:layout_marginTop="@dimen/margin_view_tiny"
+            android:text="@string/all_totalprice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_totalitem" />
+
+        <Button
+            android:id="@+id/button_cart_checkout"
+            style="@style/format_textview_small"
+            android:background="@drawable/rectangle_orange"
+            android:text="@string/cart_checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/textview_cart_totalprice"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_80sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/bottom_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:fabCradleMargin="@dimen/_4sdp"
+                app:fabCradleRoundedCornerRadius="@dimen/_16sdp"
+                app:fabCradleVerticalOffset="@dimen/_10sdp"
+                tools:ignore="BottomAppBar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:id="@+id/linear_home_appbar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_home" />
+
+                        <TextView
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Home" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_like_appbar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_like_appbar" />
+
+                        <TextView
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Like" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_news_appbar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_note" />
+
+                        <TextView
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="News" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_account_appbar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_account" />
+
+                        <TextView
+                            style="@style/main_textview_bottomappbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Account" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floating_action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/violet"
+                android:elevation="20dp"
+                android:src="@drawable/ic_cart"
+                app:layout_anchor="@id/bottom_appbar" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

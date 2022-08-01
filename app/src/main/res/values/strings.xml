@@ -38,7 +38,7 @@
     <string name="home_newest">Newest</string>
     <string name="home_searchhere">Search here</string>
 
-    <string name="payment_checkout">checkout</string>
+    <string name="cart_checkout">Checkout</string>
     <string name="news_rule">-Cac chinh sach, qui dinh</string>
     <string name="news_thanks">-Cam on qui khach da tin tuong</string>
     <string name="detail_addtocart">Add to cart</string>
@@ -53,5 +53,7 @@
     <string name="hello_news_fragment">Hello news fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cart_totalitem">Items total</string>
+    <string name="cart_ship">Ship</string>
 
 </resources>

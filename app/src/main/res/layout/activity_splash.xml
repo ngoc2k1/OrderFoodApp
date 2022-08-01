@@ -12,7 +12,7 @@
         android:background="@color/color_background"
         android:gravity="center"
         android:orientation="vertical"
-        tools:context=".SplashActivity">
+        tools:context=".activities.SplashActivity">
 
         <TextView
             android:id="@+id/textview_main_welcomestore"

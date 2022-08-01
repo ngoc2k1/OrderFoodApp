@@ -1,4 +1,4 @@
-package com.bichngoc.orderfood;
+package com.bichngoc.orderfood.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import com.bichngoc.orderfood.R;
 import com.bichngoc.orderfood.adapters.CategoryAdapter;
 import com.bichngoc.orderfood.adapters.PopularAdapter;
 import com.bichngoc.orderfood.databinding.ActivityMainBinding;
@@ -36,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewCategory();
         recyclerViewPopular();
         recyclerViewNewest();
+        bottomNavigation();
+
         mPopularAdapter.setCallback(new IRecyclerViewListener() {
             @Override
             public void onClickListener(View view, int position) {
@@ -48,7 +51,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void bottomNavigation() {
+        binding.floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
+            }
+        });
+        binding.linearHomeAppbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
 
+            }
+        });
+    }
     private void recyclerViewNewest() {
         mPopularList = new ArrayList<>();
         mPopularList.add(new Food("Pizza1", "cat_1", "beef,cheese,sauce,lettuce,tomato", 20.0));
