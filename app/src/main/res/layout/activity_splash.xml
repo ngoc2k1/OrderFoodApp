@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -14,25 +15,36 @@
         android:orientation="vertical"
         tools:context=".activities.SplashActivity">
 
+        <me.relex.circleindicator.CircleIndicator3
+            android:id="@+id/circle_indicator3_splash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ci_drawable="@drawable/oval_white"
+            app:ci_drawable_unselected="@drawable/rectangle_orange"
+            app:ci_margin="5dp"
+            app:ci_orientation="horizontal"
+            app:ci_width="10dp" />
+
         <TextView
-            android:id="@+id/textview_main_welcomestore"
+            android:id="@+id/textview_splash_welcomestore"
             style="@style/format_textview_huge"
-            android:layout_marginTop="@dimen/margin_view_medium"
+            android:layout_marginTop="@dimen/margin_view_tiny"
             android:gravity="center"
             android:text="@string/splash_welcomestore" />
 
-        <ImageView
-            android:layout_width="@dimen/width_big"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager2_splash"
+            android:layout_width="match_parent"
             android:layout_height="@dimen/height_big"
-            android:layout_marginTop="@dimen/margin_view_huge"
-            android:src="@drawable/image_food_02" />
+            android:layout_marginTop="@dimen/margin_view_small"
+            android:background="@color/violet" />
 
         <Button
-            android:id="@+id/button_main_getstarted"
-            style="@style/format_textview_medium"
-            android:textColor="@color/white"
+            android:id="@+id/button_splash_getstarted"
+            style="@style/format_textview_small"
             android:layout_marginTop="@dimen/margin_view_big"
             android:background="@drawable/rectangle_orange"
-            android:text="@string/splash_getstarted" />
+            android:text="@string/splash_getstarted"
+            android:textColor="@color/white" />
     </LinearLayout>
 </layout>

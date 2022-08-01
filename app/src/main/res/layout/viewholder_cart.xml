@@ -10,15 +10,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_150sdp"
-        android:background="@color/color_background"
+        android:layout_margin="@dimen/margin_view_tiny"
+        android:background="@drawable/background_holder_cart"
         android:padding="@dimen/padding_all_layout">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/green_dark"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="8dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_holdercart_vertical"

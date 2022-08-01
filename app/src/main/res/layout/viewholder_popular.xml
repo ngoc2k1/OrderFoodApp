@@ -11,7 +11,7 @@
         android:layout_width="@dimen/_80sdp"
         android:layout_height="@dimen/_125sdp"
         android:layout_margin="@dimen/margin_view_tiny"
-        android:background="@drawable/holder_cate_click"
+        android:background="@drawable/background_holder_category"
         android:gravity="center"
         android:orientation="vertical">
 

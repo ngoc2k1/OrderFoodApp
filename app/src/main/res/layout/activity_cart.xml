@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/textview_cart_empty"
             style="@style/format_textview_small"
-            android:text="My cart is empty!"
+            android:text="Your cart is empty!"
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_cart_mycart" />
@@ -78,15 +78,12 @@
             android:text="@string/cart_totalitem"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textview_cart_tax" />
-
         <TextView
             android:id="@+id/textview_cart_totalprice"
             style="@style/format_textview_medium"
-            android:layout_marginTop="@dimen/margin_view_tiny"
-            android:text="@string/all_totalprice"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_cart_totalitem" />
-
+            app:layout_constraintTop_toBottomOf="@id/textview_cart_totalitem"
+            android:text="@string/all_totalprice" />
         <Button
             android:id="@+id/button_cart_checkout"
             style="@style/format_textview_small"
@@ -94,7 +91,7 @@
             android:text="@string/cart_checkout"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@id/textview_cart_totalprice"
+            app:layout_constraintBottom_toBottomOf="@id/textview_cart_tax"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout

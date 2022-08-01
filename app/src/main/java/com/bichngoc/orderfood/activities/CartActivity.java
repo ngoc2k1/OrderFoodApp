@@ -65,7 +65,7 @@ public class CartActivity extends AppCompatActivity {
 
 
     private void calculateCart() {
-        double ship = 10,tax=0.1;
+        double ship = 10, tax = 0.1;
         double total = managementCart.getTotalPrice() + ship;
 //        binding.textviewCartTax.setText("Tax: " + tax + "");
 //        binding.textviewCartTotalitem.setText("Total: " + total + "");
